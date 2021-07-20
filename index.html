@@ -25,8 +25,16 @@
                 <label for="numero">Ingresa el número de la tabla de multiplicar que quieres aprender:</label>
             </div>
 
-            <button name="calcular" id="calcular" class="btn btn-primary btn-lg btn-block mt-2">Enviar</button>
-            <button name="limpiar" id="limpiar" class="btn btn-danger btn-lg btn-block mt-2">Limpiar</button>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <button name="calcular" id="calcular" class="btn btn-primary btn-lg btn-block mt-2 w-100">Enviar</button>
+                    </div>
+                    <div class="col">
+                        <button name="limpiar" id="limpiar" class="btn btn-danger btn-lg btn-block mt-2 w-100">Limpiar</button>
+                    </div>
+                </div>
+            </div>
 
             <div class="mt-3" id="salida" style="display: none;">
                 <h1 id="contador"></h1>
@@ -40,7 +48,7 @@
             </div>
 
             <div class="mt-3" id="next" style="display: none;">
-                <button name="siguiente" id="siguiente" class="btn btn-primary btn-lg btn-block mt-2">Siguiente</button>
+                <button name="siguiente" id="siguiente" class="btn btn-primary btn-lg btn-block mt-2 w-100">Siguiente</button>
             </div>
 
             <div id="bien" class="alert alert-success mt-3" role="alert" style="display: none;">

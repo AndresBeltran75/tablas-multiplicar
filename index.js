@@ -9,7 +9,7 @@ const datos = (resultado) => {
     document.querySelector('#imagenes').innerHTML = '';
     for (let i = 0; i < resultado; i++) {
         let imagen = document.createElement('img');
-        imagen.src = 'unicorn.png';
+        imagen.src = 'feliz.png';
         imagen.style.height = '50px';
         imagen.style.width = '70px';
         document.querySelector('#imagenes').appendChild(imagen);
@@ -29,16 +29,30 @@ document.querySelector('#calcular').addEventListener('click', (evento) => {
 
 document.querySelector('#siguiente').addEventListener('click', (e) => {
     e.preventDefault();
+    document.querySelector('#bien').style.display = 'none';
+    document.querySelector('#mal').style.display = 'none';
     let anterior = contador;
     const res = document.querySelector('#result').value;
     salidaActual = numero * anterior;
     if (res == salidaActual) {
         contador++;
-        salida = numero * contador;
-        datos(salida);
-        document.querySelector('#contador').innerHTML = `${numero} X ${contador}`;
-        document.querySelector('#mal').style.display = 'none';
-        document.querySelector('#bien').style.display = 'block';
+        if (contador <= 10) {
+            console.log(contador)
+            salida = numero * contador;
+            datos(salida);
+            document.querySelector('#contador').innerHTML = `${numero} X ${contador}`;
+            document.querySelector('#mal').style.display = 'none';
+            document.querySelector('#bien').style.display = 'block';
+        } else {
+            contador = 1;
+            numero++;
+            salida = numero * contador;
+            datos(salida);
+            document.querySelector('#contador').innerHTML = `${numero} X ${contador}`;
+            document.querySelector('#numero').value = numero;
+            document.querySelector('#mal').style.display = 'none';
+            document.querySelector('#bien').style.display = 'block';
+        }
     } else {
         document.querySelector('#bien').style.display = 'none';
         document.querySelector('#mal').style.display = 'block';
