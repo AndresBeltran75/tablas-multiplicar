@@ -37,7 +37,6 @@ document.querySelector('#siguiente').addEventListener('click', (e) => {
     if (res == salidaActual) {
         contador++;
         if (contador <= 10) {
-            console.log(contador)
             salida = numero * contador;
             datos(salida);
             document.querySelector('#contador').innerHTML = `${numero} X ${contador}`;
@@ -52,7 +51,7 @@ document.querySelector('#siguiente').addEventListener('click', (e) => {
             document.querySelector('#contador').innerHTML = `${numero} X ${contador}`;
             document.querySelector('#numero').value = numero;
             document.querySelector('#mal').style.display = 'none';
-            document.querySelector('#bien').style.display = 'block';
+            document.querySelector('#bien').style.display = 'none';
         }
     } else {
         document.querySelector('#bien').style.display = 'none';
