@@ -37,7 +37,6 @@ document.querySelector('#validar').addEventListener('click', (evento) => {
         document.querySelector('#contador').innerHTML = `${numero} X ${contador} = ${salidaActual}`;
         document.querySelector('#mal').style.display = 'none';
         document.querySelector('#bien').style.display = 'block';
-        document.querySelector('#result').value = '';
     } else {
         document.querySelector('#bien').style.display = 'none';
         document.querySelector('#mal').style.display = 'block';
