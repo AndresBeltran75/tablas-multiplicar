@@ -59,7 +59,7 @@ document.querySelector('#siguiente').addEventListener('click', (e) => {
             datos(salida);
         } else {
             let actual = numero++;
-            alert(`!Excelente completaste la tabla de multiplicar del ${actual}, ahora continua con la del ${numero}!`);
+            alert(`¡Excelente completaste la tabla de multiplicar del ${actual}, ahora continua con la del ${numero}!`);
             contador = 1;
             salida = numero * contador;
             datos(salida);
