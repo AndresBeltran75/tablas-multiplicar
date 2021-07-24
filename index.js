@@ -2,6 +2,7 @@ let contador = 1;
 let numero;
 let salida;
 let fecha = new Date().getFullYear();
+let patron = /\D/g;
 
 document.querySelector('#autor').innerHTML = `&copy; ${fecha} Andrés Beltrán`;
 
@@ -17,15 +18,22 @@ const datos = (resultado) => {
         document.querySelector('#siguiente').style.display = 'block';
         document.querySelector('#salida').style.display = 'block';
         document.querySelector('#imagenes').style.display = 'block';
+        document.querySelector('#nan').style.display = 'none';
     }
 };
 
 document.querySelector('#calcular').addEventListener('click', (evento) => {
     evento.preventDefault();
     numero = document.querySelector('#numero').value;
-    salida = numero * contador;
-    document.querySelector('#contador').innerHTML = `${numero} X ${contador}`;
-    datos(salida);
+    let conincide = numero.match(patron) != null ? true : false;
+    if (!conincide) {
+        salida = numero * contador;
+        document.querySelector('#contador').innerHTML = `${numero} X ${contador}`;
+        datos(salida);
+    } else {
+        document.querySelector('#nan').style.display = 'block';
+    }
+
 });
 
 document.querySelector('#validar').addEventListener('click', (evento) => {
